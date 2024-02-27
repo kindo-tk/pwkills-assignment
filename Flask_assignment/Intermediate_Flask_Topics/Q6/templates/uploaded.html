@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded File</title>
+</head>
+<body>
+    <h1>Uploaded File</h1>
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded File">
+    <p><a href="/">Upload Another File</a></p>
+</body>
+</html>

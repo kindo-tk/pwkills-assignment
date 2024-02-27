@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+</head>
+<body>
+    <div id="messages"></div>
+    <input type="text" id="message_input" placeholder="Type your message...">
+    <button id="send_button">Send</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('message', function(message) {
+            var messages = document.getElementById('messages');
+            messages.innerHTML += '<p>' + message + '</p>';
+        });
+
+        socket.on('user_count', function(count) {
+            document.getElementById('user_count').innerText = 'User count: ' + count;
+        });
+
+        document.getElementById('send_button').onclick = function() {
+            var message = document.getElementById('message_input').value;
+            socket.emit('message', message);
+            document.getElementById('message_input').value = '';
+        };
+    </script>
+</body>
+</html>

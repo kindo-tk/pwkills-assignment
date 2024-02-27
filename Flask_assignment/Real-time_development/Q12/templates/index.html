@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Data Update</title>
+</head>
+<body>
+    <h1>Real-Time Data Update</h1>
+    <p>Counter: <span id="counter">{{ data.counter }}</span></p>
+    <button id="update_button">Update Counter</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('data_updated', function(newData) {
+            document.getElementById('counter').innerText = newData.counter;
+        });
+
+        document.getElementById('update_button').onclick = function() {
+            var newCounter = parseInt(document.getElementById('counter').innerText) + 1;
+            socket.emit('update_data', { 'counter': newCounter });
+        };
+    </script>
+</body>
+</html>

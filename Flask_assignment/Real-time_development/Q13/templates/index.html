@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+</head>
+<body>
+    <h1>Notifications</h1>
+    <ul id="notification_list">
+        {% for notification in notifications %}
+            <li>{{ notification }}</li>
+        {% endfor %}
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('update_notifications', function(notifications) {
+            var notificationList = document.getElementById('notification_list');
+            notificationList.innerHTML = '';
+            notifications.forEach(function(notification) {
+                var listItem = document.createElement('li');
+                listItem.textContent = notification;
+                notificationList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
