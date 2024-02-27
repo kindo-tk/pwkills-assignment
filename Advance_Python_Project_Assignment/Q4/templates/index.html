@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Recommendation System</title>
+</head>
+<body>
+    <h1>Content Recommendation System</h1>
+    <form action="/recommend" method="post">
+        <label for="technology">Technology</label>
+        <input type="checkbox" id="technology" name="preferences" value="technology">
+        <label for="python">Python</label>
+        <input type="checkbox" id="python" name="preferences" value="python">
+        <label for="science">Science</label>
+        <input type="checkbox" id="science" name="preferences" value="science">
+        <label for="data">Data</label>
+        <input type="checkbox" id="data" name="preferences" value="data">
+        <label for="machine_learning">Machine Learning</label>
+        <input type="checkbox" id="machine_learning" name="preferences" value="machine learning">
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather Search</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1514477917009-389c76a86b68?q=80&w=1667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            width: 80%;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        label {
+            font-size: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 60%;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        input[type="submit"] {
+            padding: 12px 30px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Weather Search</h1>
+    
+        <div class="form">
+            <form action="/weatherapp" method="POST">
+                <label for='city'>Enter city:</label>
+                <br>
+                <input type="text" name="city" id="city" placeholder="e.g., Kolkata" >
+                <br><br>
+
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

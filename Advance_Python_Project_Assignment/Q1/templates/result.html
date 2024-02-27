@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Review Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d4d8d800; /* Light background color for the webpage */
+            margin: 0;
+            padding: 0;
+        }
+
+        .table-users {
+            margin: auto;
+            width: 80%;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+            background-color: #fff; /* Light background color for the table */
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table th,
+        table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #a6d9f6;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #dbebf4; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="table-users">
+        <div class="header">Reviews</div>
+
+        <table cellspacing="0">
+            <tr>
+                <th>Product</th>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>Comment Heading</th>
+                <th width="230">Comments</th>
+            </tr>
+            {% for review in reviews %}
+            <tr>
+                <td>{{review['Product']}}</td>
+                <td>{{review['Name']}}</td>
+                <td>{{review['Rating']}}</td>
+                <td>{{review['CommentHead']}}</td>
+                <td>{{review['Comment']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</body>
+
+</html>
