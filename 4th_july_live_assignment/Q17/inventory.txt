@@ -1,0 +1,11 @@
+Item ID, Item Name, Quantity, Price per Unit
+101, Apple, 50, 0.5
+102, Banana, 100, 0.3
+103, Orange, 75, 0.6
+104, Milk, 200, 1.2
+105, Bread, 150, 1.5
+106, Eggs, 250, 0.2
+107, Rice, 100, 0.8
+108, Sugar, 80, 0.9
+109, Salt, 120, 0.4
+110, Flour, 70, 0.7

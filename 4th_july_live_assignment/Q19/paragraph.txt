@@ -1,0 +1,1 @@
+This is a sample paragraph. This paragraph is written to test word count. Count the occurrences of each word in this paragraph.

@@ -1,0 +1,6 @@
+Name, Age, Salary
+Salman Khan, 60, 50000
+Sachin Tendulkar, 45, 60000
+Rajat, 22, 45000
+Reena, 30, 52000
+Raj Patel, 26, 48000
